@@ -1,0 +1,267 @@
+/* Custom Pastel Aesthetic Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fbf7f4; /* Cozy warm cream background */
+    color: #5c5252; /* Muted charcoal font for softer readability */
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Fredoka', sans-serif;
+    color: #4a3e3e;
+}
+
+/* Header Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(228, 214, 204, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ffb7b2, #ffdac1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header nav a {
+    color: #8c7a7a;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffb7b2;
+}
+
+.admin-btn {
+    background-color: #e2f0cb; /* Pastel Mint Green */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-decoration: none;
+}
+
+/* Intro Hero Banner */
+.intro {
+    text-align: center;
+    padding: 5rem 1rem 3rem;
+    background: linear-gradient(180deg, #fff5f5 0%, #fbf7f4 100%);
+}
+
+.intro h1 {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+    color: #ffb7b2; /* Soft Pastel Pink */
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #8a7a7a;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Art Cards Styling */
+.art-card {
+    background: #ffffff;
+    border-radius: 24px; /* Smooth rounded corners */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(220, 205, 195, 0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 4px solid #ffffff;
+}
+
+.art-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 183, 178, 0.4);
+}
+
+.img-container {
+    background-color: #f7d6d4; /* Color placeholder while art loads */
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* Forces layouts into neat structural squares */
+}
+
+.art-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.art-card:hover img {
+    transform: scale(1.05);
+}
+
+.art-info {
+    padding: 1.5rem;
+    background: #ffffff;
+}
+
+.art-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #6c5b5b;
+}
+
+.art-info .description {
+    font-size: 0.95rem;
+    color: #8c7e7e;
+    margin-bottom: 1rem;
+}
+
+/* Badges / Tags */
+.tag {
+    display: inline-block;
+    background-color: #b5ead7; /* Mint */
+    color: #497063;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Alternating colorful tags automatically via CSS */
+.art-card:nth-child(2n) .tag { background-color: #ffdac1; color: #875b3b; } /* Pastel Orange */
+.art-card:nth-child(3n) .tag { background-color: #e2f0cb; color: #5b6e40; } /* Yellow-Green */
+.art-card:nth-child(4n) .tag { background-color: #c7ceea; color: #525a7a; } /* Pastel Lavender */
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+    padding: 5rem 10%;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 -10px 30px rgba(228, 214, 204, 0.2);
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #b5ead7;
+    margin-bottom: 1rem;
+}
+
+/* Code Generator Control Box */
+.admin-section {
+    padding: 4rem 5%;
+    background-color: #f0e6e1;
+}
+
+.admin-box {
+    background: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border: 3px dashed #c7ceea;
+}
+
+.admin-box h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.admin-box p {
+    font-size: 0.9rem;
+    color: #8a7a7a;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #f3ece7;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #c7ceea;
+}
+
+button {
+    background-color: #ffb7b2;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #ffa39e;
+    transform: scale(1.02);
+}
+
+#codeOutput {
+    width: 100%;
+    height: 140px;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-family: monospace;
+    background-color: #f7f7f9;
+    border: 2px solid #e1e1e5;
+    border-radius: 8px;
+    resize: none;
+}
+
+.instructions {
+    font-size: 0.85rem;
+    color: #e57373;
+    margin-top: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #fbf7f4;
+    color: #aaa2a2;
+    font-size: 0.9rem;
+}
