@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pastel Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🌸 pastel.canvas</div>
+        <nav>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About Me</a>
+            <a href="#admin-panel" class="admin-btn">✨ Add Art</a>
+        </nav>
+    </header>
+
+    <main id="gallery">
+        <section class="intro">
+            <h1>Welcome to My Pastel World</h1>
+            <p>A cozy, dreamlike space showcasing my latest illustrations and creations.</p>
+        </section>
+
+        <div class="grid-container" id="art-grid">
+            
+            <div class="art-card">
+                <div class="img-container">
+                    <img src="https://picsum.photos/600/600?random=1" alt="Dreamy Clouds">
+                </div>
+                <div class="art-info">
+                    <h3>Dreamy Clouds</h3>
+                    <p class="description">A soft, cloud-filled sky experiment using soft lavender and peach brush strokes.</p>
+                    <span class="tag">Digital Painting</span>
+                </div>
+            </div>
+
+            <div class="art-card">
+                <div class="img-container">
+                    <img src="https://picsum.photos/600/600?random=2" alt="Strawberry Milk">
+                </div>
+                <div class="art-info">
+                    <h3>Strawberry Milk</h3>
+                    <p class="description">A cute, retro-inspired aesthetic sticker design featuring pastel pinks.</p>
+                    <span class="tag">Vector Art</span>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <section id="about" class="about-section">
+        <h2>About the Artist</h2>
+        <p>Hi! I create soft, whimsical art inspired by cozy aesthetics, nature, and pastel dreams. Thank you for visiting my little corner of the internet!</p>
+    </section>
+
+    <section id="admin-panel" class="admin-section">
+        <div class="admin-box">
+            <h2>✨ Add New Artwork</h2>
+            <p>1. Upload your art image to GitHub first.<br>2. Fill this out to instantly generate the code block for your new art card!</p>
+            
+            <div class="form-group">
+                <label>Image Filename (e.g., <code>my-drawing.png</code>):</label>
+                <input type="text" id="imgSrc" placeholder="crystal-sky.png">
+            </div>
+            <div class="form-group">
+                <label>Artwork Title:</label>
+                <input type="text" id="artTitle" placeholder="e.g., Lavender Fields">
+            </div>
+            <div class="form-group">
+                <label>Art Description:</label>
+                <textarea id="artDesc" rows="3" placeholder="Describe your piece..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Category/Tag:</label>
+                <input type="text" id="artTag" placeholder="e.g., Sketch, Illustration">
+            </div>
+
+            <button onclick="generateCode()">Generate Art Code</button>
+
+            <div id="output-area" style="display:none; margin-top: 1.5rem;">
+                <label>📋 Copy this code block:</label>
+                <textarea id="codeOutput" readonly onclick="this.select()"></textarea>
+                <p class="instructions">Go to <code>index.html</code> on GitHub, click edit, and paste this code right below the line that says <code>[PASTE NEW ART CARDS DIRECTLY BELOW THIS LINE]</code>!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with 💖 and Code | &copy; 2026</p>
+    </footer>
+
+    <script>
+        function generateCode() {
+            const src = document.getElementById('imgSrc').value || 'placeholder.jpg';
+            const title = document.getElementById('artTitle').value || 'Untitled';
+            const desc = document.getElementById('artDesc').value || 'No description provided.';
+            const tag = document.getElementById('artTag').value || 'Artwork';
+
+            const generatedHTML = `
+            <div class="art-card">
+                <div class="img-container">
+                    <img src="${src}" alt="${title}">
+                </div>
+                <div class="art-info">
+                    <h3>${title}</h3>
+                    <p class="description">${desc}</p>
+                    <span class="tag">${tag}</span>
+                </div>
+            </div>`;
+
+            document.getElementById('codeOutput').value = generatedHTML.trim();
+            document.getElementById('output-area').style.display = 'block';
+            document.getElementById('codeOutput').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
